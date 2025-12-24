@@ -1,0 +1,36 @@
+{
+  "name": "agc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --grep ui",
+    "test:parallel": "npx playwright test --workers=4 --project=chromium",
+    "test:serial": "npx playwright test --grep @Smoke --workers=1 --project=chromium",
+    "test:record": "npx playwright codegen",
+    "test:headed": "npx playwright test --headed --project=chromium",
+    "test:headedui": "npx playwright test --grep ui --headed --project=chromium",
+    "test:debug": "npx playwright test --debug --project=chromium",
+    "allure:generate": "allure generate ./allure-results -o ./allure-report --clean",
+    "allure:report": "allure serve",
+    "html:report": "npx playwright show-report",
+    "lighthouse": "node tests/lighthouse/Lighthouse.js",
+    "franchise:login": "npx ts-node tests/auth/login.setup.ts",
+    "lighthouse:report" : "node LighthouseReport.html",
+    "clean:reports": "rimraf allure-results allure-report test-results LighthouseReport.html playwright-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.8.1",
+    "allure-playwright": "^3.4.1",
+    "rimraf": "^6.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "lighthouse": "^13.0.0"
+  }
+}
