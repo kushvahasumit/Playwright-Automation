@@ -12,5 +12,9 @@ allure-results/
 .vscode/
 /storage/
 /allure-report/ 
-
+LighthouseReport.html
+reports/
+# Logs
+logs/
+*.log
 
