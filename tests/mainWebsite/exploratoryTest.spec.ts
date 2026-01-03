@@ -134,7 +134,7 @@ test("Check my pincode & branch",{tag:"@func"},async ({page})=>{
 
 
 
-test.fixme('fix practice', {tag:'@needFix'}, async ({page,browser})=>{
+test.skip('fix practice', {tag:'@needFix'}, async ({page,browser})=>{
   await page.goto('https://github.com/kushvahasumit');
   await page.getByRole('textbox', {name: 'github'}).first().clear();
 
