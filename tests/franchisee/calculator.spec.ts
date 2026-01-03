@@ -36,19 +36,19 @@ test("For practice", {tag:'@smoke'}, async ({page})=>{
   await page.goto(`${process.env.Base_url}`);
   await page.getByTitle('One Network, Unlimited Reach').isVisible();
 
-  // await page.dragAndDrop('#source', '#target', {
-  // sourcePosition: { x: 34, y: 7 },
-  // targetPosition: { x: 10, y: 20 },
-  // })
+  await page.dragAndDrop('#source', '#target', {
+  sourcePosition: { x: 34, y: 7 },
+  targetPosition: { x: 10, y: 20 },
+  })
 
-  // const locator = await page.frameLocator('#iframe').getByText('One Network, Unlimited Reach')
-  // locator.click();
+  const locator = await page.frameLocator('#iframe').getByText('One Network, Unlimited Reach')
+  locator.click();
 
-  // const array = [4,5,6,7];
-  // for (let index = 0; index < array.length; index++) {
-  //   const element = array[index];
-  //   console.log(element)
-  // }
+  const array = [4,5,6,7];
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    console.log(element)
+  }
 
   await page.waitForTimeout(2000);
 
